@@ -932,3 +932,7 @@
 #41 C:\\xampp\\htdocs\\StockUp\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
 #42 {main}
 "} 
+[2025-09-24 10:22:44] production.ERROR: Trait "App\Models\HasFactory" not found {"userId":1,"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"App\\Models\\HasFactory\" not found at C:\\xampp\\htdocs\\StockUp\\app\\Models\\Product.php:7)
+[stacktrace]
+#0 {main}
+"} 

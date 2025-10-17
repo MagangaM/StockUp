@@ -1,0 +1,26 @@
+name: Deploy to stockup.kesug.com
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Deploy to stockup.kesug.com
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      - name: Sync files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftpupload.net
+          username: if0_40008882
+          password: R7XuVarfPyT
+          server-dir: /htdocs/
+          timeout: 86400000 # 24 hours in milliseconds
+          log-level: standard

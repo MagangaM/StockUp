@@ -1,0 +1,5 @@
+Table Categories {
+    id int [pk, increment]
+    name varchar(100) [not null]
+    description text
+}

@@ -1,4 +1,4 @@
-name: Deploy to stockup.kesug.com
+name: Deploy to stockup.rf.gd
 
 on:
   workflow_dispatch: # Allows manual trigger
@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to stockup.kesug.com
+    name: Deploy to stockup.rf.gd
     runs-on: ubuntu-latest
 
     steps:

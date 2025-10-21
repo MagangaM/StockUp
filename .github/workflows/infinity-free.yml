@@ -21,6 +21,6 @@ jobs:
           server: ftpupload.net
           username: if0_40008882
           password: R7XuVarfPyT
-          server-dir: /htdocs/
+          server-dir: /stockup.kesug.com/htdocs/
           timeout: 86400000 # 24 hours in milliseconds
           log-level: standard

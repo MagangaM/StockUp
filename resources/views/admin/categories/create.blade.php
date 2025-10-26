@@ -28,7 +28,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="name">Category Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter the name of the category" required>
+                                        <input type="text" value="{{ old ('name') }}" class="form-control" id="name" name="name" placeholder="Enter the name of the category" required>
                                         @error ('name')
                                             <small style="color: red">{{ $message }}</small>
                                         @enderror
@@ -39,7 +39,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="name">Category's Description <b>(Optional)</b> </label>
-                                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter a brief description of the category"></textarea>
+                                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter a brief description of the category">{{ old ('description') }}</textarea>
                                 </div>
                             </div>
                         </div>

@@ -5,21 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class category extends Model
+class Branch extends Model
 {
+    /** @use HasFactory<\Database\Factories\BranchFactory> */
     use HasFactory;
-
-    protected $table = 'categories';
+    
+    protected $table = 'branches';
 
     protected $fillable = [
         'name',
-        'description',
+        'address',
+        'phonenumber',
+        'active',
     ];
-
-    public function products()
-    {
-        return $this->hasMany ("Product::class, category_id");
-    }
 }
-

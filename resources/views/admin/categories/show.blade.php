@@ -27,9 +27,7 @@
                                 <div class="form-group">
                                     <label for="name">Category Name</label>
                                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter the name of the category" value="{{ $category->name }}" readonly>
-                                        @error ('name')
-                                            <small style="color: red">{{ $message }}</small>
-                                        @enderror
+                                        
                                 </div>
                                 
                             </div>

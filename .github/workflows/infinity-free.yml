@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      
 
 jobs:
   deploy:
@@ -19,8 +20,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftpupload.net
-          username: if0_40008882
-          password: R7XuVarfPyT
-          server-dir: /htdocs/
+          username: if0_40223287
+          password: O2MvS69Qqs1
+          server-dir: stockup.kesug.com/htdocs/
           timeout: 86400000 # 24 hours in milliseconds
           log-level: standard

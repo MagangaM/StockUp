@@ -309,10 +309,25 @@ return [
        
        
         ['header' => 'Menu'],
+        
+        [
+            'text' => 'Branches', 
+            'url' => 'admin/branches',
+            'icon' => 'fas fa-fw fa-building',
+            'classes' => 'bg-orange text-white',
+        ],
+
         [
             'text' => 'Categories',
             'url' => 'admin/categories',
             'icon' => 'fas fa-fw fa-list',
+            'classes' => 'bg-orange text-white',
+        ],
+
+        [
+            'text' => 'Products',
+            'url' => 'admin/products',
+            'icon' => 'fas fa-fw fa-box',
             'classes' => 'bg-orange text-white',
         ],
        

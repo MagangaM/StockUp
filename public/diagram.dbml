@@ -1,5 +1,29 @@
+Table Branches {
+    id int [pk, increment]
+    name varchar(100) [not null]
+    address varchar(255)
+    phonenumber varchar(15)
+    active boolean [default: true]
+
+}
+
 Table Categories {
     id int [pk, increment]
     name varchar(100) [not null]
     description text
+}
+
+Table Products {
+    id int [pk, increment]
+    code varchar(50) [not null, unique]
+    name varchar(100) [not null]
+    description text
+    image varchar(255)
+    purchase_price decimal(10, 2) [not null]
+    sale_price decimal(10, 2) [not null]
+    minimum_stock int [default: 0]
+    maximum_stock int [default: 0]
+    unit_of_measurement varchar(50) [not null]
+    status boolean [default: true]
+    category_id int [ref: > Categories.id]
 }

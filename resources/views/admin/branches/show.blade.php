@@ -1,0 +1,115 @@
+@extends('adminlte::page')
+
+@section('content_header')
+    <nav aria-label="breadcrumb" style="font-size: 15pt">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url('/admin') }}" style="color:#ff9204">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ url('/admin/branches') }}" style="color:#ff9204">Branches</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data for the different branches</li>
+        </ol>
+    </nav>
+    <hr>
+@stop
+
+@section('content')
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card card-primary">
+              <div class="card-header bg-orange" >
+                <h3 class="card-title"><b>Form data</b></h3>
+               
+                <!-- /.card-tools -->
+            </div>
+              <!-- /.card-header -->
+                <div class="card-body" style="display: block;">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="name">Branch Name</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-building"></i></span>
+                                            </div>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter the name of the branch" value="{{ $branch->name }}" readonly>
+                                        @error ('name')
+                                            <small style="color: red">{{ $message }}</small>
+                                        @enderror
+                                </div>
+                                
+                            </div>
+                            
+                           <div class="col-md-13">
+                                <div class="form-group">
+                                    <label for="name">Branch Address</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-map"></i></span>
+                                            </div>
+                                            <input type="text" value="{{ $branch->address }}" class="form-control" id="address" name="address" placeholder="Enter the address of the branch" readonly>
+                                            @error ('name')
+                                                <small style="color: red">{{ $message }}</small>
+                                            @enderror
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="col-md-14">
+                                <div class="form-group">
+                                    <label for="name">Branch Phone Number</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
+                                            </div>
+                                            <input type="text" value="{{ $branch->phonenumber }}" class="form-control" id="phonenumber" name="phonenumber" placeholder="Enter the phone number of the branch" readonly>
+                                            @error ('name')
+                                                <small style="color: red">{{ $message }}</small>
+                                            @enderror
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-md-15">
+                                <div class="form-group">
+                                    <label for="name">Branch Status</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-toggle-on"></i></span>
+                                        </div>
+                                        <select name="active" id="active" class="form-control" disabled>
+                                            <option value="Select an option">Select an option</option>
+                                            <option value="1" {{ $branch->active == '1'? 'selected':'' }}>Active</option>
+                                            <option value="0" {{ $branch->active == '0'? 'selected':'' }}>Inactive</option>
+                                        </select>
+                                    </div>
+                                            @error ('name')
+                                                <small style="color: red">{{ $message }}</small>
+                                            @enderror
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <a href="{{ url('/admin/branches') }}" class="btn btn-default">Go Back</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>    
+    </div> 
+    
+@stop
+
+@section('css')
+   
+@stop
+
+@section('js')
+    
+@stop

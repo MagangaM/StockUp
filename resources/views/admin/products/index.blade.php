@@ -4,7 +4,11 @@
     <nav aria-label="breadcrumb" style="font-size: 15pt">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ url('/admin') }}" style="color:#ff9204">Home</a></li>
+<<<<<<< HEAD
+            <li class="breadcrumb-item"><a href="{{ url('/admin/categories') }}" style="color:#ff9204">Products</a></li>
+=======
             <li class="breadcrumb-item"><a href="{{ url('/admin/products') }}" style="color:#ff9204">Products</a></li>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
             <li class="breadcrumb-item active" aria-current="page">List of Products</li>
         </ol>
     </nav>
@@ -16,7 +20,11 @@
         <div class="col-md-12">
             <div class="card card-outline card-orange">
               <div class="card-header">
+<<<<<<< HEAD
+                <h3 class="card-title"><b>Products Available</b></h3>
+=======
                 <h3 class="card-title"><b>Products Catalog</b></h3>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
 
                 <div class="card-tools">
                   <a class="btn bg-orange" href="{{ url('/admin/products/create') }}" style="color:#090908"> <b>Add New</b> </a>
@@ -33,8 +41,12 @@
                                         <th>ID</th>
                                         <th>Code</th>
                                         <th>Name</th>
+<<<<<<< HEAD
+                                        <th>Image</th>
+=======
                                         <th>Description</th>
                                         <th style="text-align: center">Image</th>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                         <th>Purchase Price</th>
                                         <th>Sale Price</th>
                                         <th>Minimum Stock</th>
@@ -50,6 +62,17 @@
                                 @foreach ($products as $product )
                                     <tr>
                                         <td style="text-align: center ">{{ $loop->iteration }}</td>
+<<<<<<< HEAD
+                                        <td>{{ $product->code}}</td>
+                                        <td>{{ $product->name}}</td>
+                                        <td>{{ $product->description}}</td>
+                                        <td>{{ $product->image}}</td>
+                                        <td>{{ $product->purchase_price }}</td>
+                                        <td>{{ $product->sale_price }}</td>
+                                        <td>{{ $product->minimum_stock}}</td>
+                                        <td>{{ $product->maximum_stock}}</td>
+                                        <td>{{ $product->unit_of_measurement}}</td>
+=======
                                         <td>{{ $product->code }}</td>
                                         <td>{{ $product->name }}</td>
                                         <td>{!! $product->description !!}</td>
@@ -61,6 +84,7 @@
                                         <td>{{ $product->minimum_stock }}</td>
                                         <td>{{ $product->maximum_stock }}</td>
                                         <td>{{ $product->unit_of_measurement }}</td>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                          <td style="text-align: center">
                                             @if($product->status == '1')
                                                 <span class="badge badge-success">In Stock</span>
@@ -68,7 +92,11 @@
                                                 <span class="badge badge-danger">Out of Stock</span>
                                             @endif
                                         </td>
+<<<<<<< HEAD
+
+=======
                                         <td>{{ $product->category->name}}</td>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                         <td style="text-align: center">
                                             <div class="btn-group-sm" role="group" aria-label="Basic example">
                                                 <a href="{{ url('/admin/product/'.$product->id) }}" class="btn btn-info"><i class="fas fa-eye"> View</i></a>
@@ -94,8 +122,12 @@
                                                             document.getElementById('myform{{ $product->id }}').submit();
                                                         }
                                                         });
+<<<<<<< HEAD
+                                                    }}</script>
+=======
                                                     }}
                                                      </script>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                                     </button>
                                                 </form>                                         
                                                 </div>
@@ -146,7 +178,11 @@
 @section('js')
         <script>  $(function () {
             $("#example1").DataTable({
+<<<<<<< HEAD
+                "pageLength": 20,
+=======
                 "pageLength": 15,
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                 "responsive": true,
                 "lengthChange": true,
                 "autoWidth": false,

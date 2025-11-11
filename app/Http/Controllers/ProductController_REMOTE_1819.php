@@ -5,11 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-=======
 use Illuminate\Support\Facades\Storage;
 
->>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
 
 class ProductController extends Controller
 {
@@ -36,9 +33,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
-        //
-=======
         $request->validate([
             'code' => 'required|unique:products,code',
             'name' => 'required',
@@ -73,48 +67,30 @@ class ProductController extends Controller
         return redirect()->route ('products.index')
         ->with('message', 'Product has been created successfully!')
         ->with('icon','success');
->>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
     }
 
     /**
      * Display the specified resource.
      */
-<<<<<<< HEAD
-    public function show(Product $product)
-    {
-        //
-=======
     public function show($id)
     {
         $product = product:: findOrFail($id);
         return view('admin.products.show', compact('product'));
->>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-<<<<<<< HEAD
-    public function edit(Product $product)
-    {
-        //
-=======
     public function edit($id)
     {
         $product = product:: findOrFail($id);
         $categories = Category::all();
         return view('admin.products.edit', compact('product','categories'));
->>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
     }
 
     /**
      * Update the specified resource in storage.
      */
-<<<<<<< HEAD
-    public function update(Request $request, Product $product)
-    {
-        //
-=======
     public function update(Request $request, $id)
     {
          $request->validate([
@@ -155,17 +131,11 @@ class ProductController extends Controller
         return redirect()->route ('products.index')
         ->with('message', 'Product has been updated successfully')
         ->with('icon','success');
->>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
     }
 
     /**
      * Remove the specified resource from storage.
      */
-<<<<<<< HEAD
-    public function destroy(Product $product)
-    {
-        //
-=======
     public function destroy($id)
     {
         $product = product:: findOrFail($id);
@@ -175,6 +145,5 @@ class ProductController extends Controller
         return redirect()->route ('products.index')
         ->with('message', 'The Product was deleted successfully')
         ->with('icon','success');
->>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
     }
 }

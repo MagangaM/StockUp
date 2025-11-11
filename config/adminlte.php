@@ -314,7 +314,11 @@ return [
             'text' => 'Branches', 
             'url' => 'admin/branches',
             'icon' => 'fas fa-fw fa-building',
+<<<<<<< HEAD
+            'classes' => 'bg-orange text-white',
+=======
             'active' => ['admin/branch*'],
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
         ],
 
         [
@@ -336,6 +340,13 @@ return [
             'url' => 'admin/suppliers',
             'icon' => 'fas fa-fw fa-truck',
             'active' => ['admin/supplier*'],
+        ],
+
+        [
+            'text' => 'Products',
+            'url' => 'admin/products',
+            'icon' => 'fas fa-fw fa-box',
+            'classes' => 'bg-orange text-white',
         ],
        
     ],

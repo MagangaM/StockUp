@@ -15,6 +15,39 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card card-primary">
+<<<<<<< HEAD
+              <div class="card-header bg-orange">
+                <h3 class="card-title"><b>Fill in the form data</b></h3>
+               
+                <!-- /.card-tools -->
+            </div>
+              <!-- /.card-header -->
+                <div class="card-body" style="display:block">
+                    <form action="<?php echo e(url('/admin/products/create')); ?>" method="POST" enctype="multipart/form-data">
+                        <?php echo csrf_field(); ?>
+
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                         <div class="form-group">
+                                            <label for="category_id">Category</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-tags"></i></span>
+                                                    </div>
+                                                        <select name="category_id" id="category_id" class="form-control" required>
+                                                            <option value="">Select a category...</option>
+                                                                <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                    <option value="<?php echo e($category->id); ?>" <?php echo e(old('category_id') == $category->id ? 'selected' : ''); ?>>
+                                                                        <?php echo e($category->name); ?>
+
+                                                                    </option>
+                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                        </select>                     
+                                                </div>
+                                                <?php $__errorArgs = ['category_id'];
+=======
                 <div class="card-header bg-orange">
                     <h3 class="card-title"><b>Fill in the form data</b></h3>
                 </div>
@@ -44,10 +77,29 @@
                                                 </select>
                                             </div>
                                             <?php $__errorArgs = ['category_id'];
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
+<<<<<<< HEAD
+                                                    <small style="color: red"><?php echo e($message); ?></small>
+                                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                        </div>         
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="code">Code</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-barcode"></i></span>
+                                                    </div>
+                                                        <input type="text" value="<?php echo e(old ('code')); ?>" class="form-control" id="code" name="code" placeholder="Enter the code for the product" required>
+                                                            <?php $__errorArgs = ['name'];
+=======
                                                 <small style="color: red"><?php echo e($message); ?></small>
                                             <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
@@ -66,10 +118,30 @@ unset($__errorArgs, $__bag); ?>
                                                 <input type="text" value="<?php echo e(old('code')); ?>" class="form-control" id="code" name="code" placeholder="Enter the code for the product" required>
                                             </div>
                                             <?php $__errorArgs = ['code'];
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
+<<<<<<< HEAD
+                                                                <small style="color: red"><?php echo e($message); ?></small>
+                                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="fas fa-box"></i></span>
+                                                    </div>
+                                                        <input type="text" value="<?php echo e(old ('name')); ?>" class="form-control" id="name" name="name" placeholder="Enter the name for the product" required>
+                                                            <?php $__errorArgs = ['name'];
+=======
                                                 <small style="color: red"><?php echo e($message); ?></small>
                                             <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
@@ -88,10 +160,22 @@ unset($__errorArgs, $__bag); ?>
                                                 <input type="text" value="<?php echo e(old('name')); ?>" class="form-control" id="name" name="name" placeholder="Enter the name for the product" required>
                                             </div>
                                             <?php $__errorArgs = ['name'];
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
+<<<<<<< HEAD
+                                                                <small style="color: red"><?php echo e($message); ?></small>
+                                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                </div>    
+                                        </div>
+                                    </div>
+                                </div>
+=======
                                                 <small style="color: red"><?php echo e($message); ?></small>
                                             <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
@@ -101,20 +185,94 @@ unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
 
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="description">Description</label>
+<<<<<<< HEAD
+                                                <div class="input-group mb-3">
+                                                   <div class="editor-wrapper">
+                                                        <textarea id="description" name="description"></textarea>
+                                                    </div>
+                                                            <?php $__errorArgs = ['description'];
+=======
                                             <div class="input-group mb-3">
                                                 <div class="editor-wrapper">
                                                     <textarea id="description" name="description"></textarea>
                                                 </div>
                                             </div>
                                             <?php $__errorArgs = ['description'];
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
+<<<<<<< HEAD
+                                                                <small style="color: red"><?php echo e($message); ?></small>
+                                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="purchase_price">Purchase Price</label>
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i class="fas fa-money-bill-wave"></i></span>
+                                                            </div>
+                                                                <input type="text" value="<?php echo e(old ('purchase_price')); ?>" class="form-control" id="purchase_price" name="purchase_price" placeholder="Enter the purchase price for the product" required>               
+                                                        </div>
+                                                        <?php $__errorArgs = ['purchase_price'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                            <small style="color: red"><?php echo e($message); ?></small>
+                                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                </div>         
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="sale_price">Sale Price</label>
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i class="fas fa-money-bill-wave"></i></span>
+                                                            </div>
+                                                                <input type="text" value="<?php echo e(old ('sale_price')); ?>" class="form-control" id="sale_price" name="sale_price" placeholder="Enter the sale price for the product" required>               
+                                                        </div>
+                                                        <?php $__errorArgs = ['sale_price'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                            <small style="color: red"><?php echo e($message); ?></small>
+                                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="unit_of_measurement">Unit of Measurement</label>
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i class="fas fa-balance-scale"></i></span>
+                                                            </div>
+                                                                <input type="text" value="<?php echo e(old ('unit_of_measurement')); ?>" class="form-control" id="unit_of_measurement" name="unit_of_measurement" placeholder="Enter the unit of measurement for the product" required>
+                                                                    <?php $__errorArgs = ['unit_of_measurement'];
+=======
                                                 <small style="color: red"><?php echo e($message); ?></small>
                                             <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
@@ -135,10 +293,81 @@ unset($__errorArgs, $__bag); ?>
                                                 <input type="number" value="<?php echo e(old('purchase_price')); ?>" class="form-control" id="purchase_price" name="purchase_price" placeholder="Enter the purchase price for the product" required>
                                             </div>
                                             <?php $__errorArgs = ['purchase_price'];
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
+<<<<<<< HEAD
+                                                                        <small style="color: red"><?php echo e($message); ?></small>
+                                                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                        </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="minumum_stock">Minimum Stock</label>
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i class="fas fa-money-bill-wave"></i></span>
+                                                            </div>
+                                                                <input type="text" value="<?php echo e(old ('minumum_stock')); ?>" class="form-control" id="minumum_stock" name="minumum_stock" placeholder="Enter the minimum stock for the product" required>               
+                                                        </div>
+                                                        <?php $__errorArgs = ['minumum_stock'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                            <small style="color: red"><?php echo e($message); ?></small>
+                                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                </div>         
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="maximum_stock">Maximum Stock</label>
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i class="fas fa-money-bill-wave"></i></span>
+                                                            </div>
+                                                                <input type="text" value="<?php echo e(old ('maximum_stock')); ?>" class="form-control" id="maximum_stock" name="maximum_stock" placeholder="Enter the sale price for the product" required>               
+                                                        </div>
+                                                        <?php $__errorArgs = ['maximum_stock'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                            <small style="color: red"><?php echo e($message); ?></small>
+                                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="status">Product Status</label>
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i class="fas fa-toggle-on"></i></span>
+                                                            </div>
+                                                            <select name="active" id="active" class="form-control" required>
+                                                                <option value="Select an option">Select an option</option>
+                                                                <option value="1" <?php echo e(old('active') == '1'? 'selected':''); ?>>In Stock</option>
+                                                                <option value="0" <?php echo e(old('active') == '0'? 'selected':''); ?>>Out of Stock</option>
+                                                            </select>
+                                                        </div>
+                                                <?php $__errorArgs = ['status'];
+=======
                                                 <small style="color: red"><?php echo e($message); ?></small>
                                             <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
@@ -210,10 +439,19 @@ unset($__errorArgs, $__bag); ?>
                                                 <input type="number" value="<?php echo e(old('minimum_stock')); ?>" class="form-control" id="minimum_stock" name="minimum_stock" placeholder="Enter the minimum stock for the product" required>
                                             </div>
                                             <?php $__errorArgs = ['minimum_stock'];
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
+<<<<<<< HEAD
+                                                    <small style="color: red"><?php echo e($message); ?></small>
+                                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                            </div>    
+=======
                                                 <small style="color: red"><?php echo e($message); ?></small>
                                             <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
@@ -267,10 +505,26 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                         </div>
                                     </div>
                                 </div>
                             </div>
+<<<<<<< HEAD
+                            <div class="col-md-3">
+
+                            </div>
+                        </div>
+                     
+                    </form>
+                </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>    
+    </div> 
+    
+=======
 
                             <!-- Right section (Image preview) -->
                             <div class="col-md-3">
@@ -311,10 +565,15 @@ unset($__errorArgs, $__bag); ?>
             </div>
         </div>
     </div>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('css'); ?>
 <style>
+<<<<<<< HEAD
+    /* Make sure parent containers allow full width */
+=======
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
     .editor-wrapper,
     .ck.ck-editor,
     .ck-editor__editable_inline {
@@ -323,11 +582,19 @@ unset($__errorArgs, $__bag); ?>
         box-sizing: border-box;
     }
 
+<<<<<<< HEAD
+    /* Prevent CKEditor from being squished inside .input-group */
+=======
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
     .input-group .ck.ck-editor {
         flex: 1 1 auto;
         display: block;
     }
 
+<<<<<<< HEAD
+    /* Optional: adjust height for better visibility */
+=======
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
     .ck-editor__editable {
         min-height: 300px !important;
         width: 100% !important;
@@ -336,6 +603,42 @@ unset($__errorArgs, $__bag); ?>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('js'); ?>
+<<<<<<< HEAD
+
+<script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+<script>
+   ClassicEditor
+       .create(document.querySelector('#description'), {
+           toolbar: {
+               items: [
+                   'heading', '|',
+                   'bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript', '|',
+                   'link', 'bulletedList', 'numberedList', '|',
+                   'outdent', 'indent', '|',
+                   'alignment', '|',
+                   'blockQuote', 'insertTable', 'mediaEmbed', '|',
+                   'undo', 'redo', '|',
+                   'fontBackgroundColor', 'fontColor', 'fontSize', 'fontFamily', '|',
+                   'code', 'codeBlock', 'htmlEmbed', '|',
+                   'sourceEditing'
+               ],
+               shouldNotGroupWhenFull: true
+           },
+           language: 'en'
+       })
+       .then(editor => {
+           // Force responsive after creating the editor
+           const editorEl = editor.ui.view.element;
+           editorEl.style.width = '100%';
+           editorEl.querySelector('.ck-editor__editable').style.width = '100%';
+       }).
+       catch(error => {
+           console.error(error);
+       });
+</script>
+
+<?php $__env->stopSection(); ?>
+=======
 <script>
     function previewImage(event) {
         const input = event.target;
@@ -381,4 +684,5 @@ unset($__errorArgs, $__bag); ?>
 </script>
 <?php $__env->stopSection(); ?>
 
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
 <?php echo $__env->make('adminlte::page', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\wamp64\www\Stockup\resources\views/admin/products/create.blade.php ENDPATH**/ ?>

@@ -40,6 +40,16 @@ Route::get('/admin/product/{id}/edit', [App\Http\Controllers\ProductController::
 Route::put('/admin/product/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('products.update')->middleware('auth');
 Route::delete('/admin/product/{id}', [App\Http\Controllers\ProductController::class, 'destroy'])->name('products.destroy')->middleware('auth');
 
+<<<<<<< HEAD
+=======
+// Routes for suppliers
+Route::get('/admin/suppliers', [App\Http\Controllers\SupplierController::class, 'index'])->name('suppliers.index')->middleware('auth');
+Route::post('/admin/supplier/create', [App\Http\Controllers\SupplierController::class, 'store'])->name('suppliers.store')->middleware('auth');
+Route::put('/admin/supplier/{id}', [App\Http\Controllers\SupplierController::class, 'update'])->name('suppliers.update')->middleware('auth');
+Route::delete('/admin/supplier/{id}', [App\Http\Controllers\SupplierController::class, 'destroy'])->name('suppliers.destroy')->middleware('auth');
+
+
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
 
 
 

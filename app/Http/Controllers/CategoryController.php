@@ -42,7 +42,7 @@ class CategoryController extends Controller
         $category->save();
 
         return redirect()->route ('categories.index')
-        ->with('message', 'Category created successfully')
+        ->with('message', 'Category has been created successfully!')
         ->with('icon','success');
     }
 

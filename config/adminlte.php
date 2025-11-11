@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>Stockup</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/inventory.gif',
+    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.gif',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.gif',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -113,7 +113,7 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.gif',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -135,7 +135,7 @@ return [
 
     'usermenu_enabled' => true,
     'usermenu_header' => false,
-    'usermenu_header_class' => 'bg-primary',
+    'usermenu_header_class' => 'bg-orange',
     'usermenu_image' => false,
     'usermenu_desc' => false,
     'usermenu_profile_url' => false,
@@ -171,12 +171,12 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_card' => 'card-outline card-orange',
     'classes_auth_header' => '',
     'classes_auth_body' => '',
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
-    'classes_auth_btn' => 'btn-flat btn-primary',
+    'classes_auth_btn' => 'btn-flat btn-orange',
 
     /*
     |--------------------------------------------------------------------------
@@ -196,7 +196,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-orange elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -314,14 +314,32 @@ return [
             'text' => 'Branches', 
             'url' => 'admin/branches',
             'icon' => 'fas fa-fw fa-building',
+<<<<<<< HEAD
             'classes' => 'bg-orange text-white',
+=======
+            'active' => ['admin/branch*'],
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
         ],
 
         [
             'text' => 'Categories',
             'url' => 'admin/categories',
             'icon' => 'fas fa-fw fa-list',
-            'classes' => 'bg-orange text-white',
+            'active' => ['admin/category*'],
+        ],
+
+        [
+            'text' => 'Products',
+            'url' => 'admin/products',
+            'icon' => 'fas fa-fw fa-box',
+            'active' => ['admin/product*'],
+        ],
+
+        [
+            'text' => 'Suppliers',
+            'url' => 'admin/suppliers',
+            'icon' => 'fas fa-fw fa-truck',
+            'active' => ['admin/supplier*'],
         ],
 
         [

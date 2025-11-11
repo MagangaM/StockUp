@@ -43,11 +43,19 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+<<<<<<< HEAD
+=======
+                                        </div>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                 </div>
                                 
                             </div>
                             
+<<<<<<< HEAD
                             <div class="col-md-13">
+=======
+                            <div class="col-md-12">
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                 <div class="form-group">
                                     <label for="name">Branch Address</label>
                                         <div class="input-group mb-3">
@@ -65,11 +73,19 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+<<<<<<< HEAD
+=======
+                                        </div>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                 </div>
                                 
                             </div>
 
+<<<<<<< HEAD
                             <div class="col-md-14">
+=======
+                            <div class="col-md-12">
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                 <div class="form-group">
                                     <label for="name">Branch Phone Number</label>
                                         <div class="input-group mb-3">
@@ -87,23 +103,38 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+<<<<<<< HEAD
+=======
+                                        </div>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                 </div>
                                 
                             </div>
 
+<<<<<<< HEAD
                             <div class="col-md-15">
+=======
+                            <div class="col-md-12">
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                 <div class="form-group">
                                     <label for="name">Branch Status</label>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-toggle-on"></i></span>
+<<<<<<< HEAD
                                         </div>
+=======
+                                            </div>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                         <select name="active" id="active" class="form-control" required>
                                             <option value="Select an option">Select an option</option>
                                             <option value="1" <?php echo e(old('active') == '1'? 'selected':''); ?>>Active</option>
                                             <option value="0" <?php echo e(old('active') == '0'? 'selected':''); ?>>Inactive</option>
                                         </select>
+<<<<<<< HEAD
                                     </div>
+=======
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                             <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -114,6 +145,10 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+<<<<<<< HEAD
+=======
+                                        </div>
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007
                                 </div>
                                 
                             </div>

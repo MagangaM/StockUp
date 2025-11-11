@@ -32,6 +32,7 @@
                                         @error ('name')
                                             <small style="color: red">{{ $message }}</small>
                                         @enderror
+                                    
                                 </div>
                                 
                             </div>
@@ -48,7 +49,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <a href="{{ url('/admin/categories') }}" class="btn btn-default">Cancel</a>
-                                    <button type="submit" class="btn bg-orange">Save</button>
+                                    <button type="submit" class="btn bg-orange">Register</button>
                                 </div>
                             </div>
                         </div>

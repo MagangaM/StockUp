@@ -26,4 +26,17 @@ Table Products {
     unit_of_measurement varchar(50) [not null]
     status boolean [default: true]
     category_id int [ref: > Categories.id]
+<<<<<<< HEAD
 }
+=======
+}
+
+Table Suppliers {
+    id int [pk, increment]
+    company varchar(100)
+    address varchar(255)
+    name varchar(100) [not null]
+    phonenumber varchar(15)
+    email varchar(100)
+}
+>>>>>>> 266a7f8076f74ebcf3f2f6276464a62f87608007

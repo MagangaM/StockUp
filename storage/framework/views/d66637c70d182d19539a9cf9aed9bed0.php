@@ -28,7 +28,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="name">Category Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter the name of the category" required>
+                                        <input type="text" value="<?php echo e(old ('name')); ?>" class="form-control" id="name" name="name" placeholder="Enter the name of the category" required>
                                         <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -39,6 +39,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+                                    
                                 </div>
                                 
                             </div>
@@ -46,7 +47,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="name">Category's Description <b>(Optional)</b> </label>
-                                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter a brief description of the category"></textarea>
+                                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter a brief description of the category"><?php echo e(old ('description')); ?></textarea>
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-name: Deploy to stockup.kesug.com
+name: Deploy to stockup.gt.tc
 
 on:
   workflow_dispatch: # Allows manual trigger
@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to stockup.kesug.com
+    name: Deploy to stockup.gt.tc
     runs-on: ubuntu-latest
 
     steps:
@@ -19,8 +19,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftpupload.net
-          username: if0_40008882
-          password: R7XuVarfPyT
+          username: if0_40223287
+          password: O2MvS69Qqs1
           server-dir: /htdocs/
           timeout: 86400000 # 24 hours in milliseconds
           log-level: standard

@@ -309,6 +309,14 @@ return [
        
        
         ['header' => 'Menu'],
+        
+        [
+            'text' => 'Branches',
+            'url' => 'admin/branches',
+            'icon' => 'fas fa-fw fa-building',
+            'classes' => 'bg-orange text-white',
+        ],
+
         [
             'text' => 'Categories',
             'url' => 'admin/categories',

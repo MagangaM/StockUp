@@ -33,7 +33,9 @@
                                                 <span class="input-group-text"><i class="fas fa-building"></i></span>
                                             </div>
                                             <input type="text" value="<?php echo e(old ('name')); ?>" class="form-control" id="name" name="name" placeholder="Enter the name of the branch" required>
-                                            <?php $__errorArgs = ['name'];
+                                            
+                                        </div>
+                                        <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -43,7 +45,6 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                        </div>
                                 </div>
                                 
                             </div>
@@ -56,7 +57,9 @@ unset($__errorArgs, $__bag); ?>
                                                 <span class="input-group-text"><i class="fas fa-map"></i></span>
                                             </div>
                                             <input type="text" value="<?php echo e(old ('address')); ?>" class="form-control" id="address" name="address" placeholder="Enter the address of the branch" required>
-                                            <?php $__errorArgs = ['name'];
+                                            
+                                        </div>
+                                        <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -66,7 +69,6 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                        </div>
                                 </div>
                                 
                             </div>
@@ -79,7 +81,9 @@ unset($__errorArgs, $__bag); ?>
                                                 <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
                                             </div>
                                             <input type="text" value="<?php echo e(old ('phonenumber')); ?>" class="form-control" id="phonenumber" name="phonenumber" placeholder="Enter the phone number of the branch" required>
-                                            <?php $__errorArgs = ['name'];
+                                            
+                                        </div>
+                                        <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -89,7 +93,6 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                        </div>
                                 </div>
                                 
                             </div>
@@ -106,7 +109,9 @@ unset($__errorArgs, $__bag); ?>
                                             <option value="1" <?php echo e(old('active') == '1'? 'selected':''); ?>>Active</option>
                                             <option value="0" <?php echo e(old('active') == '0'? 'selected':''); ?>>Inactive</option>
                                         </select>
-                                            <?php $__errorArgs = ['name'];
+                                            
+                                        </div>
+                                        <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -116,7 +121,6 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                        </div>
                                 </div>
                                 
                             </div>
@@ -126,7 +130,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <a href="<?php echo e(url('/admin/branches')); ?>" class="btn btn-default">Cancel</a>
-                                    <button type="submit" class="btn bg-orange">Save</button>
+                                    <button type="submit" class="btn bg-orange">Register</button>
                                 </div>
                             </div>
                         </div>

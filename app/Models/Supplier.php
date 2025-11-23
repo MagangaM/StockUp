@@ -19,4 +19,16 @@ class Supplier extends Model
         'phonenumber',
         'email',
     ];
+
+    public function batches()
+    {
+        return $this->hasMany(Batch::class);
+    }
+
+    public function purchases()
+{
+    return $this->hasMany(Purchase::class);
+}
+
+
 }

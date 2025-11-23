@@ -33,10 +33,11 @@
                                                 <span class="input-group-text"><i class="fas fa-building"></i></span>
                                             </div>
                                             <input type="text" value="{{ old ('name') }}" class="form-control" id="name" name="name" placeholder="Enter the name of the branch" required>
-                                            @error ('name')
+                                            
+                                        </div>
+                                        @error ('name')
                                                 <small style="color: red">{{ $message }}</small>
                                             @enderror
-                                        </div>
                                 </div>
                                 
                             </div>
@@ -49,10 +50,11 @@
                                                 <span class="input-group-text"><i class="fas fa-map"></i></span>
                                             </div>
                                             <input type="text" value="{{ old ('address') }}" class="form-control" id="address" name="address" placeholder="Enter the address of the branch" required>
-                                            @error ('name')
+                                            
+                                        </div>
+                                        @error ('name')
                                                 <small style="color: red">{{ $message }}</small>
                                             @enderror
-                                        </div>
                                 </div>
                                 
                             </div>
@@ -65,10 +67,11 @@
                                                 <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
                                             </div>
                                             <input type="text" value="{{ old ('phonenumber') }}" class="form-control" id="phonenumber" name="phonenumber" placeholder="Enter the phone number of the branch" required>
-                                            @error ('name')
+                                            
+                                        </div>
+                                        @error ('name')
                                                 <small style="color: red">{{ $message }}</small>
                                             @enderror
-                                        </div>
                                 </div>
                                 
                             </div>
@@ -85,10 +88,11 @@
                                             <option value="1" {{ old('active') == '1'? 'selected':'' }}>Active</option>
                                             <option value="0" {{ old('active') == '0'? 'selected':'' }}>Inactive</option>
                                         </select>
-                                            @error ('name')
+                                            
+                                        </div>
+                                        @error ('name')
                                                 <small style="color: red">{{ $message }}</small>
                                             @enderror
-                                        </div>
                                 </div>
                                 
                             </div>

@@ -56,7 +56,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <a href="<?php echo e(url('/admin/categories')); ?>" class="btn btn-default">Cancel</a>
-                                    <button type="submit" class="btn bg-orange">Save</button>
+                                    <button type="submit" class="btn bg-orange">Register</button>
                                 </div>
                             </div>
                         </div>

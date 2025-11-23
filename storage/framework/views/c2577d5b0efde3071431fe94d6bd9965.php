@@ -70,7 +70,7 @@ unset($__errorArgs, $__bag); ?>
                                                         <span class="input-group-text"><i class="fas fa-map"></i></span>
                                                     </div>
                                                     <input type="text" value="<?php echo e(old ('address')); ?>" class="form-control" id="address" name="address" placeholder="Enter the address of the company" required>
-                                                    <?php $__errorArgs = ['name'];
+                                                    <?php $__errorArgs = ['address'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -116,7 +116,7 @@ unset($__errorArgs, $__bag); ?>
                                                         <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
                                                     </div>
                                                     <input type="text" value="<?php echo e(old ('phonenumber')); ?>" class="form-control" id="phonenumber" name="phonenumber" placeholder="Enter the phone number of the supplier" required>
-                                                    <?php $__errorArgs = ['name'];
+                                                    <?php $__errorArgs = ['phonenumber'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -248,7 +248,7 @@ unset($__errorArgs, $__bag); ?>
                                                                                 <span class="input-group-text"><i class="fas fa-map"></i></span>
                                                                             </div>
                                                                             <input type="text" value="<?php echo e($supplier->address); ?>" class="form-control" id="address" name="address" placeholder="Enter the address of the company" readonly>
-                                                                            <?php $__errorArgs = ['name'];
+                                                                            <?php $__errorArgs = ['address'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -294,7 +294,7 @@ unset($__errorArgs, $__bag); ?>
                                                                                 <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
                                                                             </div>
                                                                             <input type="text" value="<?php echo e($supplier->phonenumber); ?>" class="form-control" id="phonenumber" name="phonenumber" placeholder="Enter the phone number of the supplier" readonly>
-                                                                            <?php $__errorArgs = ['name'];
+                                                                            <?php $__errorArgs = ['phonenumber'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -338,7 +338,7 @@ unset($__errorArgs, $__bag); ?>
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <a href="<?php echo e(url('/admin/suppliers')); ?>" class="btn btn-default">Cancel</a>
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                                                                     
                                                                 </div>
                                                             </div>
@@ -347,158 +347,9 @@ unset($__errorArgs, $__bag); ?>
                                                     </div>
                                                 </div>
                                                 </div>
-                                                <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalEdit<?php echo e($supplier->id); ?>">
-                                                <i class="fas fa-pencil-alt"> Edit</i>
-                                                </button>
-
-
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="ModalEdit<?php echo e($supplier->id); ?>" tabindex="-1" aria-labelledby="ModalEditLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                    <div class="modal-header" style="border-color: #00ff55 ;background-color: #00ff55; color: white;">
-                                                        <h5 class="modal-title" id="ModalEditLabel"><b>Edit supplier details</b></h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form action="<?php echo e(url('/admin/supplier/'.$supplier->id)); ?>" method="POST" enctype="multipart/form-data">
-                                                        <?php echo csrf_field(); ?>
-                                                        <?php echo method_field('PUT'); ?>
-                                                            <div class="row">
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label for="name">Company Name</label>
-                                                                            <div class="input-group mb-3">
-                                                                                <div class="input-group-prepend">
-                                                                                    <span class="input-group-text"><i class="fas fa-industry"></i></span>
-                                                                                </div>
-                                                                                <input type="text" value="<?php echo e(old ('company', $supplier->company)); ?>" class="form-control" id="company" name="company" placeholder="Enter the name of the company" required>
-                                                                                <?php $__errorArgs = ['company'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                                                    <small style="color: red"><?php echo e($message); ?></small>
-                                                                                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                                                            </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-                                                                
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label for="name">Company Address</label>
-                                                                            <div class="input-group mb-3">
-                                                                                <div class="input-group-prepend">
-                                                                                    <span class="input-group-text"><i class="fas fa-map"></i></span>
-                                                                                </div>
-                                                                                <input type="text" value="<?php echo e(old ('address', $supplier->address)); ?>" class="form-control" id="address" name="address" placeholder="Enter the address of the company" required>
-                                                                                <?php $__errorArgs = ['name'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                                                    <small style="color: red"><?php echo e($message); ?></small>
-                                                                                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                                                            </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label for="name">Supplier's Name</label>
-                                                                            <div class="input-group mb-3">
-                                                                                <div class="input-group-prepend">
-                                                                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                                                </div>
-                                                                                <input type="text" value="<?php echo e(old ('name', $supplier->name)); ?>" class="form-control" id="name" name="name" placeholder="Enter the name of the supplier" required>
-                                                                                <?php $__errorArgs = ['name'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                                                    <small style="color: red"><?php echo e($message); ?></small>
-                                                                                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                                                            </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label for="name">Supplier's Phone Number</label>
-                                                                            <div class="input-group mb-3">
-                                                                                <div class="input-group-prepend">
-                                                                                    <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
-                                                                                </div>
-                                                                                <input type="text" value="<?php echo e(old ('phonenumber', $supplier->phonenumber)); ?>" class="form-control" id="phonenumber" name="phonenumber" placeholder="Enter the phone number of the supplier" required>
-                                                                                <?php $__errorArgs = ['name'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                                                    <small style="color: red"><?php echo e($message); ?></small>
-                                                                                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                                                            </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label for="name">Supplier's Email</label>
-                                                                            <div class="input-group mb-3">
-                                                                                <div class="input-group-prepend">
-                                                                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                                                                </div>
-                                                                                <input type="text" value="<?php echo e(old ('email', $supplier->email)); ?>" class="form-control" id="email" name="email" placeholder="Enter the email of the supplier" required>
-                                                                                <?php $__errorArgs = ['email'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                                                    <small style="color: red"><?php echo e($message); ?></small>
-                                                                                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                                                            </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                            
-                                                            <hr>
-
-                                                            <div class="row">
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <a href="<?php echo e(url('/admin/suppliers')); ?>" class="btn btn-danger">Cancel</a>
-                                                                        <button type="submit" class="btn btn-success">Update</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                                </div>
+                                                <a href="<?php echo e(url('/admin/supplier/'.$supplier->id.'/edit')); ?>" class="btn btn-success"><i class="fas fa-pencil-alt"> Edit</i></a>
+                                                                                                   
+                                            
                                                 <form action="<?php echo e(url('/admin/supplier/'.$supplier->id)); ?>" id= "myform<?php echo e($supplier->id); ?>" method="POST" class="d-inline">
                                                     <?php echo csrf_field(); ?>
                                                     <?php echo method_field('DELETE'); ?>
@@ -523,7 +374,7 @@ unset($__errorArgs, $__bag); ?>
                                                     }}
                                                      </script>
                                                     </button>
-                                                                                       
+                                                </form>                                         
                                                 </div>
                                             </td>
                                     </tr>
@@ -570,10 +421,9 @@ unset($__errorArgs, $__bag); ?>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('js'); ?>
-        <script>
-        $(function () {
+        <script>  $(function () {
             $("#example1").DataTable({
-                "pageLength": 10,
+                "pageLength": 15,
                 "responsive": true,
                 "lengthChange": true,
                 "autoWidth": false,

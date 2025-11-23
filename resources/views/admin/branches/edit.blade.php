@@ -16,7 +16,7 @@
         <div class="col-md-5">
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title"><b>Fill in the form data</b></h3>
+                <h3 class="card-title"><b>Edit the branch details below</b></h3>
                
                 <!-- /.card-tools -->
             </div>

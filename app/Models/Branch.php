@@ -18,4 +18,15 @@ class Branch extends Model
         'phonenumber',
         'active',
     ];
+
+    public function branchbatchinventories()
+    {
+        return $this->hasMany(BranchBatchInventory::class);
+    }
+
+    public function inventoryMovements()
+{
+    return $this->hasMany(InventoryMovement::class);
+}
+
 }

@@ -36,3 +36,55 @@ Table Suppliers {
     phonenumber varchar(15)
     email varchar(100)
 }
+
+Table Batches {
+  id int [pk, increment]
+  product_id int [ref: > Products.id]
+  supplier_id int [ref: > Suppliers.id]
+
+  batch_code varchar(50) [not null]
+  entry_date date
+  expiration_date date
+  initial_quantity int [not null]
+  current_quantity int [not null]
+  purchase_price decimal(10, 2) [null]
+  sale_price decimal(10, 2) [null]
+  status boolean [default: true]
+}
+
+Table Branch_Batch_Inventory {
+  id int [pk, increment]
+  batch_id int [ref: > Batches.id]
+  branch_id int [ref: > Branches.id]
+  quantity_at_branch int [not null]
+}
+
+Table Inventory_Movements {
+  id int [pk, increment]
+  product_id int [ref: > Products.id]
+  batch_id int [ref: > Batches.id]
+  branch_id int [ref: > Branches.id]
+  movement_type varchar(50) [not null] // e.g.: 'entry', 'exit', 'adjustment'
+  quantity int [not null]
+  date datetime [default: `current_timestamp`]
+  remarks text
+}
+
+Table Purchases {
+  id int [pk, increment]
+  supplier_id int [ref: > Suppliers.id]
+  date datetime [default: `current_timestamp`]
+  total decimal(10,2) [not null]
+  status varchar(50) [default: 'pending']
+  observations text
+}
+
+Table Purchase_Details {
+  id int [pk, increment]
+  purchase_id int [ref: > Purchases.id]
+  product_id int [ref: > Products.id]
+  batch_id int [ref: > Batches.id]
+  quantity int [not null]
+  unit_price decimal(10,2) [not null]
+  subtotal decimal(10,2) [not null]
+}

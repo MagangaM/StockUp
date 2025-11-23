@@ -63,7 +63,7 @@
                                                         <span class="input-group-text"><i class="fas fa-map"></i></span>
                                                     </div>
                                                     <input type="text" value="{{ old ('address') }}" class="form-control" id="address" name="address" placeholder="Enter the address of the company" required>
-                                                    @error ('name')
+                                                    @error ('address')
                                                         <small style="color: red">{{ $message }}</small>
                                                     @enderror
                                                 </div>
@@ -95,7 +95,7 @@
                                                         <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
                                                     </div>
                                                     <input type="text" value="{{ old ('phonenumber') }}" class="form-control" id="phonenumber" name="phonenumber" placeholder="Enter the phone number of the supplier" required>
-                                                    @error ('name')
+                                                    @error ('phonenumber')
                                                         <small style="color: red">{{ $message }}</small>
                                                     @enderror
                                                 </div>
@@ -206,7 +206,7 @@
                                                                                 <span class="input-group-text"><i class="fas fa-map"></i></span>
                                                                             </div>
                                                                             <input type="text" value="{{ $supplier->address }}" class="form-control" id="address" name="address" placeholder="Enter the address of the company" readonly>
-                                                                            @error ('name')
+                                                                            @error ('address')
                                                                                 <small style="color: red">{{ $message }}</small>
                                                                             @enderror
                                                                         </div>
@@ -238,7 +238,7 @@
                                                                                 <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
                                                                             </div>
                                                                             <input type="text" value="{{ $supplier->phonenumber }}" class="form-control" id="phonenumber" name="phonenumber" placeholder="Enter the phone number of the supplier" readonly>
-                                                                            @error ('name')
+                                                                            @error ('phonenumber')
                                                                                 <small style="color: red">{{ $message }}</small>
                                                                             @enderror
                                                                         </div>
@@ -268,7 +268,7 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <a href="{{ url('/admin/suppliers') }}" class="btn btn-default">Cancel</a>
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                                                                     
                                                                 </div>
                                                             </div>
@@ -277,123 +277,9 @@
                                                     </div>
                                                 </div>
                                                 </div>
-                                                <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalEdit{{ $supplier->id }}">
-                                                <i class="fas fa-pencil-alt"> Edit</i>
-                                                </button>
-
-
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="ModalEdit{{ $supplier->id }}" tabindex="-1" aria-labelledby="ModalEditLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                    <div class="modal-header" style="border-color: #03882f ;background-color: #03882f; color: white;">
-                                                        <h5 class="modal-title" id="ModalEditLabel"><b>Edit supplier details</b></h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form action="{{ url('/admin/supplier/'.$supplier->id) }}" method="POST" enctype="multipart/form-data">
-                                                        @csrf
-                                                        @method('PUT')
-                                                            <div class="row">
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label for="name">Company Name</label>
-                                                                            <div class="input-group mb-3">
-                                                                                <div class="input-group-prepend">
-                                                                                    <span class="input-group-text"><i class="fas fa-industry"></i></span>
-                                                                                </div>
-                                                                                <input type="text" value="{{ old ('company', $supplier->company) }}" class="form-control" id="company" name="company" placeholder="Enter the name of the company" required>
-                                                                                @error ('company')
-                                                                                    <small style="color: red">{{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-                                                                
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label for="name">Company Address</label>
-                                                                            <div class="input-group mb-3">
-                                                                                <div class="input-group-prepend">
-                                                                                    <span class="input-group-text"><i class="fas fa-map"></i></span>
-                                                                                </div>
-                                                                                <input type="text" value="{{ old ('address', $supplier->address) }}" class="form-control" id="address" name="address" placeholder="Enter the address of the company" required>
-                                                                                @error ('name')
-                                                                                    <small style="color: red">{{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label for="name">Supplier's Name</label>
-                                                                            <div class="input-group mb-3">
-                                                                                <div class="input-group-prepend">
-                                                                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                                                </div>
-                                                                                <input type="text" value="{{ old ('name', $supplier->name) }}" class="form-control" id="name" name="name" placeholder="Enter the name of the supplier" required>
-                                                                                @error ('name')
-                                                                                    <small style="color: red">{{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label for="name">Supplier's Phone Number</label>
-                                                                            <div class="input-group mb-3">
-                                                                                <div class="input-group-prepend">
-                                                                                    <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
-                                                                                </div>
-                                                                                <input type="text" value="{{ old ('phonenumber', $supplier->phonenumber) }}" class="form-control" id="phonenumber" name="phonenumber" placeholder="Enter the phone number of the supplier" required>
-                                                                                @error ('name')
-                                                                                    <small style="color: red">{{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label for="name">Supplier's Email</label>
-                                                                            <div class="input-group mb-3">
-                                                                                <div class="input-group-prepend">
-                                                                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                                                                </div>
-                                                                                <input type="text" value="{{ old ('email', $supplier->email) }}" class="form-control" id="email" name="email" placeholder="Enter the email of the supplier" required>
-                                                                                @error ('email')
-                                                                                    <small style="color: red">{{ $message }}</small>
-                                                                                @enderror
-                                                                            </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                            
-                                                            <hr>
-
-                                                            <div class="row">
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <a href="{{ url('/admin/suppliers') }}" class="btn btn-danger">Cancel</a>
-                                                                        <button type="submit" class="btn btn-success">Update</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                                </div>
+                                                <a href="{{ url('/admin/supplier/'.$supplier->id.'/edit') }}" class="btn btn-success"><i class="fas fa-pencil-alt"> Edit</i></a>
+                                                                                                   
+                                            
                                                 <form action="{{ url('/admin/supplier/'.$supplier->id) }}" id= "myform{{ $supplier->id }}" method="POST" class="d-inline">
                                                     @csrf
                                                     @method('DELETE')
@@ -418,7 +304,7 @@
                                                     }}
                                                      </script>
                                                     </button>
-                                                                                       
+                                                </form>                                         
                                                 </div>
                                             </td>
                                     </tr>
@@ -465,10 +351,9 @@
 @stop
 
 @section('js')
-        <script>
-        $(function () {
+        <script>  $(function () {
             $("#example1").DataTable({
-                "pageLength": 10,
+                "pageLength": 15,
                 "responsive": true,
                 "lengthChange": true,
                 "autoWidth": false,

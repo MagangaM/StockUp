@@ -337,6 +337,13 @@ return [
             'icon' => 'fas fa-fw fa-truck',
             'active' => ['admin/supplier*'],
         ],
+
+        [
+            'text' => 'Purchases',
+            'url' => 'admin/purchases',
+            'icon' => 'fas fa-fw fa-shopping-cart',
+            'active' => ['admin/purchase*'],
+        ],
        
     ],
 

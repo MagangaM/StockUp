@@ -16,7 +16,7 @@
         <div class="col-md-12">
             <div class="card card-primary">
                 <div class="card-header bg-orange">
-                    <h3 class="card-title"><b>Fill in the form data</b></h3>
+                    <h3 class="card-title"><b>Fill in the details of the product</b></h3>
                 </div>
 
                 <div class="card-body" style="display:block;">
@@ -302,7 +302,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <a href="<?php echo e(url('/admin/products')); ?>" class="btn btn-default">Cancel</a>
-                                    <button type="submit" class="btn bg-orange">Save</button>
+                                    <button type="submit" class="btn bg-orange">Register</button>
                                 </div>
                             </div>
                         </div>

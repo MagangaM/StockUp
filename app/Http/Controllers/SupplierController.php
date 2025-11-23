@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Supplier;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class SupplierController extends Controller
 {
@@ -56,7 +55,7 @@ class SupplierController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Supplier $supplier)
     {
         //
     }
@@ -66,7 +65,8 @@ class SupplierController extends Controller
      */
     public function edit($id)
     {
-        //
+        $supplier = Supplier:: findOrFail($id);
+        return view('admin.suppliers.edit', compact('supplier'));
     }
 
     /**
@@ -79,18 +79,18 @@ class SupplierController extends Controller
             'address' => 'required|string|max: 255',
             'name' => 'required|string|max: 255',
             'phonenumber' => 'required|string|max: 50',
-            'email' => 'required|unique:suppliers,email'.$id,
+            'email' => 'required|email|unique:suppliers,email,'.$id,
             
         ]);
 
         $supplier = Supplier:: findOrFail($id);
-
         
         $supplier->company = $request->company;
         $supplier->address = $request->address;
         $supplier->name = $request->name;
         $supplier->phonenumber = $request->phonenumber;
         $supplier->email = $request->email;
+
         $supplier->save();
 
         return redirect()->route ('suppliers.index')
@@ -102,8 +102,13 @@ class SupplierController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Supplier $supplier)
+    public function destroy($id)
     {
-        //
+        $supplier = Supplier:: findOrFail($id);
+        $supplier->delete();
+
+        return redirect()->route ('suppliers.index')
+        ->with('message', 'Supplier was removed successfully!')
+        ->with('icon','success');
     }
 }
